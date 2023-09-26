@@ -68,17 +68,26 @@ body
   box-sizing: border-box;
 }
 
-/* Create two equal columns that floats next to each other */
+/* Create two unequal columns that floats next to each other */
 .column 
-{
+  {
   float: left;
-  width: 50%;
-  padding: 10px;
-  height: 1000px;
+  padding: 12px;
+  height: 1000px; /* Should be removed. Only for demonstration */
+}
+  
+.left 
+{
+  width: 66%;
+}
+  
+.right 
+{
+  width: 33%;
 }
 
 /* Clear floats after the columns */
-.row: after 
+.row:after 
 {
   content: "";
   display: table;
@@ -139,7 +148,7 @@ Click below to begin your mission briefing.
 <h2>FACT SHEET</h2>
 
 <div class="row">
-  <div class="column" style="background-color:#aaa;">
+<div class="column left" style="background-color:#aaa;">
 
 <h2>FACT SHEET</h2>
 <h3>Description</h3>
@@ -178,14 +187,14 @@ Good luck, Space Cowboy!
 </p>
 <br>
   <br>
-    
-  </div>
-
-  
-  <div class="column" style="background-color:#bbb;">
-   
-  </div>
 </div>
+
+<div class="column right" style="background-color:#bbb;">
+   
+</div>
+  
+</div>
+  
 </div>
 <!-- End-->
   
