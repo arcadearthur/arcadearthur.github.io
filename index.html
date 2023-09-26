@@ -37,6 +37,10 @@ body
   background-color: #ffffff;
   color: black;
 }
+
+{
+  scroll-behavior: smooth;
+}
   
 .block 
  {
@@ -115,7 +119,7 @@ body
 <p style="color:gray;">
 Click below to begin your mission briefing.
 </p>
-<button class="block">ACCEPT</button>
+<button class="block"><a href "#game">ACCEPT</a></button>
 <br>
   <br>
     <br>
@@ -126,7 +130,7 @@ Click below to begin your mission briefing.
 <!--Start IFRAME -->
   
 <center>
-<div class="game-section">
+<div id="game" class="game-section">
 <div style="width: 99%; height: 0; padding-bottom: 56.71%; position: relative;">
     <iframe src="https://paularthur-experiments.s3.us-west-1.amazonaws.com/webgl-experiment-build001/YourPAL/index.html"
      title="YourPAL" 
