@@ -150,7 +150,7 @@ u
 
 .slideshow-container 
 {
-  max-width: 1000px;
+  max-width: 1000px;
   position: relative;
   margin: auto;
 }
@@ -192,7 +192,7 @@ u
 }
 
 /* Caption */
-.text 
+.caption 
 {
   color: #f2f2f2;
   font-size: 15px;
@@ -211,6 +211,23 @@ u
   padding: 8px 12px;
   position: absolute;
   top: 0;
+}
+
+.circle 
+{
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .circle:hover 
+{
+  background-color: #717171;
 }
 
 .fade 
@@ -265,55 +282,55 @@ Click below to begin your mission briefing.
   <div class="mySlides fade">
     <div class="numbertext">1 / 9</div>
     <img src="PA-Cyberspace_AsteroidHunter-SS-00.png" style="width:100%">
-    <div class="text">GUI</div>
+    <div class=“caption”>GUI</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 9</div>
     <img src="PA-Cyberspace_AsteroidHunter-SS-01.png" style="width:100%">
-    <div class="text">GUI</div>
+    <div class=“caption”>GUI</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 9</div>
     <img src="PA-Cyberspace_AsteroidHunter-SS-02.png" style="width:100%">
-    <div class="text">GUI</div>
+    <div class=“caption”>GUI</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">4 / 9</div>
     <img src="PA-Cyberspace_AsteroidHunter-SS-03.png" style="width:100%">
-    <div class="text">GUI</div>
+    <div class=“caption”>GUI</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">5 / 9</div>
     <img src="PA-Cyberspace_AsteroidHunter-SS-04.png" style="width:100%">
-    <div class="text">GUI</div>
+    <div class=“caption”>GUI</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">6 / 9</div>
     <img src="PA-Cyberspace_AsteroidHunter-SS-05.png" style="width:100%">
-    <div class="text">HUD</div>
+    <div class=“caption”>HUD</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">7 / 9</div>
     <img src="PA-Cyberspace_AsteroidHunter-SS-06.png" style="width:100%">
-    <div class="text">GAMEPLAY</div>
+    <div class=“caption”>GAMEPLAY</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">8 / 9</div>
     <img src="PA-Cyberspace_AsteroidHunter-SS-07.png" style="width:100%">
-    <div class="text">GAMEPLAY</div>
+    <div class=“caption”>GAMEPLAY</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">9 / 9</div>
     <img src="PA-Cyberspace_AsteroidHunter-SS-08.png" style="width:100%">
-    <div class="text">GUI</div>
+    <div class=“caption”>GUI</div>
   </div>
 
   <!-- Buttons -->
@@ -324,15 +341,15 @@ Click below to begin your mission briefing.
 
 <!-- The dots/circles -->
 <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)”></span>
-  <span class="dot" onclick="currentSlide(5)”></span>
-  <span class="dot" onclick="currentSlide(6)”></span>
-  <span class="dot" onclick="currentSlide(7)”></span>
-  <span class="dot" onclick="currentSlide(8)”></span>
-  <span class="dot" onclick="currentSlide(9)”></span>
+  <span class=“circle” onclick="currentSlide(1)"></span>
+  <span class=“circle” onclick="currentSlide(2)"></span>
+  <span class=“circle” onclick="currentSlide(3)"></span>
+  <span class=“circle” onclick="currentSlide(4)”></span>
+  <span class=“circle” onclick="currentSlide(5)”></span>
+  <span class=“circle” onclick="currentSlide(6)”></span>
+  <span class=“circle” onclick="currentSlide(7)”></span>
+  <span class=“circle” onclick="currentSlide(8)”></span>
+  <span class=“circle” onclick="currentSlide(9)”></span>
 </div>
 <br>
   
@@ -422,7 +439,8 @@ Good luck, Space Cowboy!
 </center>
 
 <!-- END -->
-  <script>
+  
+<script>
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -442,7 +460,7 @@ function showSlides(n)
 {
   let i;
   let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
+  let dots = document.getElementsByClassName(“circle”);
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
 
@@ -451,6 +469,14 @@ function showSlides(n)
     slides[i].style.display = "none";
 }
 
+for (i = 0; i < dots.length; i++) 
+{
+    dots[i].className = dots[i].className.replace(" active", "");
+}
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
 </script>
+  
 </body> 
 </html>
