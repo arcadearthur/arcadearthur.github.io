@@ -150,6 +150,7 @@ img
 
 .container 
 {
+  width: 50%;
   position: relative;
 }
 
@@ -265,7 +266,6 @@ Click below to begin your mission briefing.
 </div>
 </center>
 
-
 <!-- SLIDESHOW -->
 <div class="container">
   <div class="mySlides">
@@ -307,22 +307,22 @@ Click below to begin your mission briefing.
 
   <div class="rows">
     <div class="col">
-      <img class="demo cursor" src="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/15c45067c0771d7a85f44cc63ba1449a15b37d5d/PA-Cyberspace_AsteroidHunter-SS-00.png" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      <img class="demo cursor" src="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/15c45067c0771d7a85f44cc63ba1449a15b37d5d/PA-Cyberspace_AsteroidHunter-SS-00.png" style="width:100%" onclick="currentSlide(1)" alt="GUI">
     </div>
     <div class="col">
-      <img class="demo cursor" src="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/15c45067c0771d7a85f44cc63ba1449a15b37d5d/PA-Cyberspace_AsteroidHunter-SS-01.png" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+      <img class="demo cursor" src="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/15c45067c0771d7a85f44cc63ba1449a15b37d5d/PA-Cyberspace_AsteroidHunter-SS-01.png" style="width:100%" onclick="currentSlide(2)" alt="GUI">
     </div>
     <div class="col">
-      <img class="demo cursor" src="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/15c45067c0771d7a85f44cc63ba1449a15b37d5d/PA-Cyberspace_AsteroidHunter-SS-02.png" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+      <img class="demo cursor" src="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/15c45067c0771d7a85f44cc63ba1449a15b37d5d/PA-Cyberspace_AsteroidHunter-SS-02.png" style="width:100%" onclick="currentSlide(3)" alt="GUI">
     </div>
     <div class="col">
-      <img class="demo cursor" src="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/15c45067c0771d7a85f44cc63ba1449a15b37d5d/PA-Cyberspace_AsteroidHunter-SS-03.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+      <img class="demo cursor" src="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/15c45067c0771d7a85f44cc63ba1449a15b37d5d/PA-Cyberspace_AsteroidHunter-SS-03.png" style="width:100%" onclick="currentSlide(4)" alt="GUI">
     </div>
     <div class="col">
-      <img class="demo cursor" src="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/15c45067c0771d7a85f44cc63ba1449a15b37d5d/PA-Cyberspace_AsteroidHunter-SS-04.png" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+      <img class="demo cursor" src="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/15c45067c0771d7a85f44cc63ba1449a15b37d5d/PA-Cyberspace_AsteroidHunter-SS-04.png" style="width:100%" onclick="currentSlide(5)" alt="GUI">
     </div>    
     <div class="col">
-      <img class="demo cursor" src="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/15c45067c0771d7a85f44cc63ba1449a15b37d5d/PA-Cyberspace_AsteroidHunter-SS-05.png" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+      <img class="demo cursor" src="https://raw.githubusercontent.com/arcadearthur/arcadearthur.github.io/15c45067c0771d7a85f44cc63ba1449a15b37d5d/PA-Cyberspace_AsteroidHunter-SS-05.png" style="width:100%" onclick="currentSlide(6)" alt="HUD">
     </div>
   </div>
 </div>
@@ -347,12 +347,17 @@ function showSlides(n)
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("demo");
   let captionText = document.getElementById("caption");
+  
   if (n > slides.length) {slideIndex = 1}
+  
   if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
+  
+  for (i = 0; i < slides.length; i++) 
+  {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
+  for (i = 0; i < dots.length; i++) 
+  {
     dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex-1].style.display = "block";
